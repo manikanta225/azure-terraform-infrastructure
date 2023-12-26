@@ -66,7 +66,7 @@ resource "azurerm_virtual_machine" "vm" {
   storage_image_reference {
     publisher = "bitnami"
     offer     = "nginxstack"
-    sku       = "20.04-LTS"
+    sku       = "1-9"
     version   = "latest"
   }
   storage_os_disk {
