@@ -66,7 +66,7 @@ resource "azurerm_virtual_machine" "nginx" {
   storage_image_reference {
     publisher = "bitnami"
     offer     = "nginxstack"
-    sku       = "16.04-LTS"  
+    sku       = "0-9"  
     version   = "latest"
   }
  
