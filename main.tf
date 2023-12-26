@@ -64,9 +64,9 @@ resource "azurerm_virtual_machine" "vm" {
   vm_size               = "Standard_D1_v2"
 
   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
+    publisher = "bitnami"
+    offer     = "nginxstack"
+    sku       = "20.04-LTS"
     version   = "latest"
   }
   storage_os_disk {
