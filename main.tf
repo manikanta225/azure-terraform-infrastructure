@@ -56,19 +56,20 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
-resource "azurerm_virtual_machine" "vm" {
-  name                  = "${var.prefix}-vm"
+resource "azurerm_virtual_machine" "nginx" {
+  name                  = "myVM"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
-  network_interface_ids = [azurerm_network_interface.nic.id]
-  vm_size               = "Standard_D1_v2"
+  network_interface_ids = [azurerm_network_interface.my_nic.id]
+  vm_size               = "Standard_DS1_v2"
 
   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
+    publisher = "bitnami"
+    offer     = "nginxstack"
+    sku       = "1-9"  # Replace with the correct SKU
     version   = "latest"
   }
+ 
   storage_os_disk {
     name              = "myosdisk1"
     caching           = "ReadWrite"
