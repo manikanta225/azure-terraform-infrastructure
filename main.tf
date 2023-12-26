@@ -25,7 +25,7 @@ variable "prefix" {
   default = "terraform"
 }
 
-resource "azurerm_resource_group" "rg" {
+resource "Fisher-Test-RG" "rg" {
   name     = "${var.prefix}-ResourceGroup"
   location = "Central India"
 }
