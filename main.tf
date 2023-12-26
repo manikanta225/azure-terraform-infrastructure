@@ -66,7 +66,7 @@ resource "azurerm_virtual_machine" "nginx" {
   storage_image_reference {
     publisher = "bitnami"
     offer     = "nginxstack"
-    sku       = "1-9"  # Replace with the correct SKU
+    sku       = "20.04"  # Replace with the correct SKU
     version   = "latest"
   }
  
